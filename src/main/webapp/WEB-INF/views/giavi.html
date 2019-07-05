@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/giavi}" method="post">
+    <input type="checkbox" value="Lettuce" th:name="condiment">Lettuce
+    <input type="checkbox" value="Tomoto" th:name="condiment">Tomoto
+    <input type="checkbox" value="Mustard" th:name="condiment">Mustard
+    <input type="checkbox" value="Sprouts" th:name="condiment">Sprouts
+    <input type="submit">
+</form>
+<div th:if="${message}">
+    <div>
+        <p th:${message}></p>
+    </div>
+
+</div>
+<div th:if="${condiments}">
+    <div th:each="condiment,iterStat : ${condiments}" >
+        <p th:text="${condiment}"></p>
+    </div>
+</div>
+</body>
+</html>
